@@ -5,20 +5,20 @@ Coursera Getting and Cleaning Data Course Project
 
 #run_analysis.R #
 
-## Script Purpose ## 
+## Script Purpose 
 1. Merges the training and the test sets to create one data set.
 2. Extracts only the measurements on the mean and standard deviation for each measurement. 
 3. Uses descriptive activity names to name the activities in the data set
 4. Appropriately labels the data set with descriptive activity names. 
 5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject. 
 
-## Script Prepration ## 
+## Script Prepration 
 For this script to run you must:
 
 * set you working directory
 * ensure that you have the reshape2 R package
 
-## Script Steps ##
+## Script Steps
 
 1. Load training and test data
 2. Assign column names to the data sets
