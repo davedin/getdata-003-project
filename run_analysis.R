@@ -102,19 +102,15 @@ names(dataFinal)
 write.table(dataFinal, "output.txt", sep = "\t", row.names = FALSE)
 
 
+
 # 8. Creates a second data set with the average of each variable for each activity and each subject
 ###################################################################################################
 
-# get the average of stuff
+# load reshape2 library
 library("reshape2")
 
 dataPrep <- dataFinal
 
-# # make one column that combines the subjet and activity
-# dataPrep$subject.activity <- do.call(paste, c(dataPrep[c("subject","activity")], sep = "_"))
-
-# 8. Creates a second data set with the average of each variable for each activity and each subject
-###################################################################################################
 
 # 8.1 Get column names with numeric values
 dataSummaryColNames <- colnames(dataPrep)
@@ -129,14 +125,10 @@ dataSummary <- melt(dataPrep,
                     measure.vars=( dataSummarysubsetMeanStdColNamesOrdered ) # alternative: measure.vars=( 1:79 )                    
 )
 
-# head(dataSummary)
-# tail(dataSummary)
-# dcast(dataSummary, subject.activity ~ variable,mean), se
 
 # 8.3 write get the mean the data for each variable grouped by subject and activity
 tidyData <- dcast(dataSummary, subject + activity ~ variable, fun.aggregate=mean)
-# tidyData
-# head(tidyData, n=31)
+
 
 # 8.4 write out the file of summarized data
 write.table(tidyData, "tidyData.txt", sep = "\t", row.names = FALSE)
