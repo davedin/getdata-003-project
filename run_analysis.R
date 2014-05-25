@@ -66,9 +66,9 @@ dataAll <- cbind(allData, allSubject, allY)
 #############################################################
 
 allColNames <- colnames(dataAll)
-    
 subsetMeanColNames <- grep("mean", allColNames)
 subsetStdColNames <- grep("std", allColNames) 
+# also include columns subject and actvity (the last 2, 563 and 563)
 subsetMeanStdColNamesOrdered <- sort( c(subsetMeanColNames, subsetStdColNames, 562,563) )
 
 dataFinal <- dataAll[,subsetMeanStdColNamesOrdered]
@@ -137,47 +137,3 @@ tidyData <- dcast(dataSummary, subject + activity ~ variable, fun.aggregate=mean
 
 # 8.4 write out the file of summarized data
 write.table(tidyData, "tidyData.txt", sep = "\t", row.names = FALSE)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# transform data so that each subject/activity
-dataSummary <- melt(dataPrep, 
-             id=c("subject.activity"),
-             
-           #  measure.vars=( c("time.bodyacc.mean.x") )
-           measure.vars=( colnames( dataSummarysubsetMeanStdColNamesOrdered ) )
-           
-            )
-head(dataSummary)
-tail(dataSummary)
-
-# dataSummary[dataSummary$variable == "time.bodyacc.mean.x"]
-# dataSummary[dataSummary$variable == "time.bodyacc.mean.x" & dataSummary$subject.activity == "1_STANDING"]
-# measubset(dataSummary, dataSummary$variable == "time.bodyacc.mean.x" & dataSummary$subject.activity == "1_STANDING", select = "value"))
-
-bar <- dcast(dataSummary, subject.activity ~ variable,mean)
-#bar <- dcast(dataSummary, subject.activity ~ value,mean)
-#bar<- tapply(foo$value, foo$subject.activity, mean(na.rm=T))
-head(bar, n=301)
-str(bar)
