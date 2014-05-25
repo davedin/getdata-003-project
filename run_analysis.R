@@ -1,9 +1,14 @@
 ### IMPORTANT ##################################
 # set this the working directory for your system
 ################################################
+
+# set working directory to be in the that contains a folder called
+# test and train.  By default this will be the "UCI HAR Dataset" directory
+# that is created after you unzip you data files
+# from http://archive.ics.uci.edu/ml/machine-learning-databases/00240/UCI%20HAR%20Dataset.zip
 wd = "C:/www/r/assignment-c3wk3/UCI HAR Dataset/"
 setwd(wd)
-getwd()
+
 
 
 # 1. Load training and test data
