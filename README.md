@@ -40,6 +40,6 @@ For this script to run you must:
 * data file: http://archive.ics.uci.edu/ml/machine-learning-databases/00240/UCI%20HAR%20Dataset.zip
  * more info: http://archive.ics.uci.edu/ml/machine-learning-databases/00240/
  
- ## Data Outputs
- 1. output.txt - a tab dilimeted file containing the unsummarized data usded to create the tidy data
- 2. tidyData.txt - a tab dilimeted file containing the unsummarized data the average of each variable for each activity and each subject.
+## Data Outputs
+1. output.txt - a tab dilimeted file containing the unsummarized data usded to create the tidy data
+2. tidyData.txt - a tab dilimeted file containing the unsummarized data the average of each variable for each activity and each subject.
