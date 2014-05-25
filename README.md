@@ -26,6 +26,7 @@ For this script to run you must:
 2. Assign column names to the data sets
 3. Combine test and traing data sets in into one data set
 4. Extract columns that contatin only mean and standard dev
+ 4. Columns selected contianed either the word "mean" or "std"
 5. Label activies by using activity names instead of numbers
 6. transform the column names to be more readable
 7. write the dataset to a file
