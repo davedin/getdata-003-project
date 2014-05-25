@@ -20,6 +20,8 @@ For this script to run you must:
 
 ## Script Steps
 
+** YOU MUST SET YOUR WORKING DIRECTORY **
+
 1. Load training and test data
 2. Assign column names to the data sets
 3. Combine test and traing data sets in into one data set
@@ -28,3 +30,15 @@ For this script to run you must:
 6. transform the column names to be more readable
 7. write the dataset to a file
 8. Creates a second data set with the average of each variable for each activity and each subject
+ 8.1 Get column names with numeric values
+ 8.2 melt the data to group by subject and activity
+ 8.3 write get the mean the data for each variable grouped by subject and activity
+ 8.4 write out the file of summarized data
+
+## Data Inputs
+* data file: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+ * more info: http://archive.ics.uci.edu/ml/machine-learning-databases/00240/
+ 
+ ## Data Outputs
+ 1. output.txt - a tab dilimeted file containing the unsummarized data usded to create the tidy data
+ 2. tidyData.txt - a tab dilimeted file containing the unsummarized data the average of each variable for each activity and each subject.
